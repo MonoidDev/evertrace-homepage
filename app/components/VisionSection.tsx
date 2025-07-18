@@ -26,7 +26,7 @@ const VisionSection = () => {
   ]
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white to-twilight-50 dark:from-navy-800 dark:to-navy-900 py-20">
+    <div className="relative py-24 md:py-32 bg-gradient-to-br from-twilight-50 to-white dark:from-navy-900 dark:to-navy-800">
       <div className="container-max section-padding">
         {/* Section Header */}
         <motion.div

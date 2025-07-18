@@ -33,69 +33,80 @@ const ProblemSection = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top center',
-        end: 'bottom center',
-        scrub: 1,
-        pin: true,
-        pinSpacing: false
-      }
-    })
-
-    // Animate problem points sequentially
+    // Animate problem points sequentially on scroll
     problemPoints.forEach((_, index) => {
-      tl.fromTo(
+      gsap.fromTo(
         `.problem-point-${index}`,
         { opacity: 0, y: 50, scale: 0.8 },
-        { opacity: 1, y: 0, scale: 1, duration: 1 },
-        index * 0.5
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: `.problem-point-${index}`,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
       )
     })
 
     // Final overlay animation
-    tl.fromTo(
+    gsap.fromTo(
       '.problem-overlay',
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 1 },
-      '+=0.5'
+      { opacity: 0, y: 30, scale: 0.95 },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: '.problem-overlay',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      }
     )
 
   }, [])
 
   return (
-    <div ref={sectionRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-50 to-twilight-50 dark:from-navy-900 dark:to-navy-800">
+    <div ref={sectionRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white to-twilight-50 dark:from-navy-800 dark:to-navy-900">
       <div className="container-max section-padding">
         {/* Section Title */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-gradient mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-gradient mb-3 sm:mb-4 md:mb-6 px-4">
             The Emotional Infrastructure Gap
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
             While technology transformed every aspect of life, how we say goodbye remains unchanged
           </p>
         </motion.div>
 
         {/* Problem Points Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
           {problemPoints.map((point, index) => (
             <motion.div
               key={index}
-              className={`problem-point-${index} glass rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300`}
+              className={`problem-point-${index} glass rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 text-center hover:shadow-xl transition-all duration-300`}
               whileHover={{ scale: 1.05, y: -5 }}
             >
-              <div className="text-4xl mb-4">{point.icon}</div>
-              <div className="text-2xl md:text-3xl font-bold text-twilight-600 dark:text-twilight-400 mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 md:mb-5">{point.icon}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-twilight-600 dark:text-twilight-400 mb-2 sm:mb-3 md:mb-4">
                 {point.stat}
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-lg">
+              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 {point.description}
               </p>
             </motion.div>
@@ -104,13 +115,13 @@ const ProblemSection = () => {
 
         {/* Final Overlay Message */}
         <motion.div
-          className="problem-overlay text-center p-8 glass rounded-3xl max-w-4xl mx-auto"
+          className="problem-overlay text-center p-6 sm:p-8 md:p-10 glass rounded-2xl sm:rounded-3xl max-w-5xl mx-auto"
           whileHover={{ scale: 1.02 }}
         >
-          <h3 className="text-2xl md:text-4xl font-serif font-bold text-gradient mb-4">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-gradient mb-3 sm:mb-4 md:mb-5 px-2">
             Technology transformed life—but forgot how we say goodbye.
           </h3>
-          <p className="text-lg text-gray-700 dark:text-gray-300">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed px-2">
             The infrastructure for preserving human connection across generations doesn't exist. 
             Until now.
           </p>
