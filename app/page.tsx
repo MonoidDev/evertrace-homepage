@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { motion } from 'framer-motion'
 import Navigation from './components/Navigation'
 import HeroSection from './components/HeroSection'
@@ -19,7 +20,7 @@ import TeamSection from './components/TeamSection'
 import CTASection from './components/CTASection'
 
 if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 }
 
 export default function HomePage() {
@@ -30,12 +31,6 @@ export default function HomePage() {
 
     // GSAP ScrollTrigger setup
     ScrollTrigger.refresh()
-    
-    // Global smooth scrolling
-    gsap.to(window, {
-      scrollTo: { autoKill: false },
-      ease: "power2.out"
-    })
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill())
