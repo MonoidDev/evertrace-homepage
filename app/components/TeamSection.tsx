@@ -6,22 +6,16 @@ import { motion } from 'framer-motion'
 const TeamSection = () => {
   const team = [
     {
-      name: "Dr. Yuki Tanaka",
-      role: "CEO & Co-founder",
-      background: "Former AI Research Lead at Tokyo University",
+      name: "Yanru Mao",
+      role: "CEO",
+      background: "Waseda University\nFounder of G.K. Monoid\nIT product consultant with cross-border team leadership experience",
       avatar: "👩‍💼"
     },
     {
-      name: "Marcus Chen",
+      name: "Chenyu Wang",
       role: "CTO",
-      background: "Ex-Google AI, Stanford PhD",
+      background: "University of Southern California (USC)\nFormer engineer at Microsoft\nSpecialized in distributed systems and cloud infrastructure",
       avatar: "👨‍💻"
-    },
-    {
-      name: "G.K. Monoid",
-      role: "Founding Partner",
-      background: "Track record in logistics, finance, AI, pet e-commerce",
-      avatar: "🎯"
     }
   ]
 
@@ -43,7 +37,7 @@ const TeamSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -58,12 +52,16 @@ const TeamSection = () => {
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                 {member.name}
               </h3>
-              <p className="text-twilight-600 dark:text-twilight-400 mb-3">
+              <p className="text-twilight-600 dark:text-twilight-400 mb-4 font-medium">
                 {member.role}
               </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {member.background}
-              </p>
+              <div className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                {member.background.split('\n').map((line, lineIndex) => (
+                  <p key={lineIndex} className="mb-1">
+                    {line}
+                  </p>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
