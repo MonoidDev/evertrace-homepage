@@ -1,0 +1,126 @@
+'use client'
+
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+
+const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'Why Evertrace', href: '#problem' },
+    { name: 'Demo', href: '#demo' },
+    { name: 'Vision', href: '#vision-poetry' },
+    { name: 'Team', href: '#team' },
+    { name: 'Contact', href: '#contact' },
+  ]
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode)
+    document.documentElement.classList.toggle('dark')
+  }
+
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'glass shadow-lg py-2'
+          : 'bg-transparent py-4'
+      }`}
+    >
+      <div className="container-max section-padding">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <motion.div
+            className="flex items-center space-x-2"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="w-8 h-8 bg-gradient-to-br from-twilight-500 to-gold-500 rounded-lg flex items-center justify-center">
+              <svg
+                className="w-5 h-5 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" />
+              </svg>
+            </div>
+            <span className="font-serif text-xl font-semibold text-gradient">
+              Evertrace
+            </span>
+          </motion.div>
+
+          {/* Navigation Items */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className="text-gray-700 dark:text-gray-300 hover:text-twilight-600 dark:hover:text-twilight-400 transition-colors font-medium"
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 0 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+          </div>
+
+          {/* Right Side */}
+          <div className="flex items-center space-x-4">
+            {/* Dark Mode Toggle */}
+            <motion.button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-lg glass hover:bg-white/20 dark:hover:bg-black/20 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isDarkMode ? (
+                <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              )}
+            </motion.button>
+
+            {/* CTA Button */}
+            <motion.a
+              href="#demo"
+              className="hidden sm:block px-6 py-2 bg-gradient-to-r from-twilight-500 to-twilight-600 text-white rounded-full font-medium hover:from-twilight-600 hover:to-twilight-700 transition-all shadow-lg hover:shadow-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              See Demo
+            </motion.a>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              className="md:hidden p-2 rounded-lg glass"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </motion.button>
+          </div>
+        </div>
+      </div>
+    </motion.nav>
+  )
+}
+
+export default Navigation
