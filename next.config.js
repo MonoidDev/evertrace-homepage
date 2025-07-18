@@ -5,10 +5,7 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true
-  },
-  // Set base path for GitHub Pages (replace 'evertrace' with your repo name)
-  basePath: process.env.NODE_ENV === 'production' ? '/evertrace' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/evertrace/' : ''
+  }
 }
 
 module.exports = nextConfig
