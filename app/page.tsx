@@ -97,32 +97,11 @@ export default function HomePage() {
         {/* 11. Team */}
         <section id="team" className="relative">
           <TeamSection />
-        </section>
-
-        {/* 12. CTA */}
-        <section id="contact" className="relative">
-          <CTASection />
-        </section>
-      </main>
-
-      {/* Floating Elements */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <motion.div
-          className="absolute top-20 left-10 w-4 h-4 bg-twilight-300/30 rounded-full floating-element"
-          animate={{ y: [-20, 20, -20] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-40 right-20 w-6 h-6 bg-gold-300/30 rounded-full floating-element"
-          animate={{ y: [20, -20, 20] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-        <motion.div
-          className="absolute bottom-40 left-20 w-3 h-3 bg-navy-300/30 rounded-full floating-element"
-          animate={{ y: [-15, 15, -15] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        />
-      </div>
+        </section>      {/* 12. CTA */}
+      <section id="contact" className="relative">
+        <CTASection />
+      </section>
+    </main>
     </div>
   )
 }
