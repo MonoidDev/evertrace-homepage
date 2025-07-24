@@ -13,7 +13,7 @@ const JapanSection = () => {
       stat: "29%",
       description: "of Japan's population is over 65",
       projection: "35% by 2040",
-      color: "twilight"
+      color: "indigo"
     },
     {
       stat: "120,000+",
@@ -83,7 +83,7 @@ const JapanSection = () => {
   }, [])
 
   return (
-    <div ref={sectionRef} className="relative min-h-screen bg-gradient-to-br from-navy-900 via-navy-800 to-twilight-900 text-white py-20">
+    <div ref={sectionRef} className="relative min-h-screen bg-gradient-to-br from-navy-900 via-navy-800 to-indigo-900 text-white py-20">
       {/* Traditional Japanese Pattern Overlay */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 100 100">
@@ -110,7 +110,7 @@ const JapanSection = () => {
           <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6">
             <span className="text-gold-400">Japan:</span> Where Tradition Meets
             <br />
-            <span className="text-gradient bg-gradient-to-r from-twilight-400 to-gold-400 bg-clip-text text-transparent">
+            <span className="text-gradient bg-gradient-to-r from-indigo-400 to-gold-400 bg-clip-text text-transparent">
               Digital Innovation
             </span>
           </h2>
@@ -134,7 +134,7 @@ const JapanSection = () => {
             whileInView={{ width: 'auto' }}
             transition={{ duration: 2, delay: 0.5 }}
           >
-            <div className="h-1 w-20 bg-gradient-to-r from-gold-400 to-twilight-400"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-gold-400 to-indigo-400"></div>
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -142,7 +142,7 @@ const JapanSection = () => {
             >
               ⚡
             </motion.div>
-            <div className="h-1 w-20 bg-gradient-to-r from-twilight-400 to-gold-400"></div>
+            <div className="h-1 w-20 bg-gradient-to-r from-indigo-400 to-gold-400"></div>
           </motion.div>
 
           <motion.div 
@@ -198,7 +198,7 @@ const JapanSection = () => {
           <p className="text-lg text-gray-300 leading-relaxed">
             Japan combines the world's deepest ancestral respect traditions, 
             the most sophisticated technology adoption, and the most urgent demographic need. 
-            <span className="text-twilight-400 font-semibold block mt-4">
+            <span className="text-indigo-400 font-semibold block mt-4">
               This isn't just a market—it's the epicenter of memorial innovation.
             </span>
           </p>

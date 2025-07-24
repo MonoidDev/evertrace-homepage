@@ -38,7 +38,7 @@ const FeaturesSection = () => {
   ]
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-navy-50 to-twilight-50 dark:from-navy-900 dark:to-twilight-900 py-20">
+    <div className="relative min-h-screen bg-gradient-to-br from-navy-50 to-indigo-50 dark:from-navy-900 dark:to-indigo-900 py-20">
       <div className="container-max section-padding">
         <motion.div
           className="text-center mb-16"
@@ -60,7 +60,7 @@ const FeaturesSection = () => {
             <motion.div
               key={index}
               className={`glass rounded-2xl p-8 cursor-pointer transition-all duration-300 ${
-                activeFeature === index ? 'ring-2 ring-twilight-400 bg-twilight-50/50 dark:bg-twilight-900/50' : ''
+                activeFeature === index ? 'ring-2 ring-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/50' : ''
               }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ const FeaturesSection = () => {
                   <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                     {feature.title}
                   </h3>
-                  <p className="text-twilight-600 dark:text-twilight-400 mb-3">
+                  <p className="text-indigo-600 dark:text-indigo-400 mb-3">
                     {feature.description}
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
@@ -85,13 +85,13 @@ const FeaturesSection = () => {
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
-                      className="border-t border-twilight-200 dark:border-twilight-700 pt-4 mt-4"
+                      className="border-t border-indigo-200 dark:border-indigo-700 pt-4 mt-4"
                     >
-                      <p className="text-twilight-700 dark:text-twilight-300 italic">
+                      <p className="text-indigo-700 dark:text-indigo-300 italic">
                         {feature.preview}
                       </p>
                       <motion.button
-                        className="mt-3 px-4 py-2 bg-twilight-500 text-white rounded-lg text-sm hover:bg-twilight-600 transition-colors"
+                        className="mt-3 px-4 py-2 bg-indigo-500 text-white rounded-lg text-sm hover:bg-indigo-600 transition-colors"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >

@@ -47,16 +47,16 @@ const Navigation = () => {
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-twilight-500 to-gold-500 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-transparent rounded-lg flex items-center justify-center">
               <svg
-                className="w-5 h-5 text-white"
+                className="w-5 h-5 text-olive-500"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" />
+                <path d="M12 2Q10 10 2 12Q10 14 12 22Q14 14 22 12Q14 10 12 2Z" />
               </svg>
             </div>
-            <span className="font-serif text-xl font-semibold text-gradient">
+            <span className="font-serif text-xl font-semibold text-olive-500">
               Evertrace
             </span>
           </motion.div>
@@ -67,7 +67,7 @@ const Navigation = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-twilight-600 dark:hover:text-twilight-400 transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
@@ -99,7 +99,7 @@ const Navigation = () => {
             {/* CTA Button */}
             <motion.a
               href="#demo"
-              className="hidden sm:block px-6 py-2 bg-gradient-to-r from-twilight-500 to-twilight-600 text-white rounded-full font-medium hover:from-twilight-600 hover:to-twilight-700 transition-all shadow-lg hover:shadow-xl"
+              className="hidden sm:block px-6 py-2 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-full font-medium hover:from-indigo-600 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -15,7 +15,7 @@
   
   @media (prefers-color-scheme: dark) {
     body {
-      @apply text-gray-100;
+      @apply text-gray-100 bg-navy-900;
     }
   }
 }
@@ -32,14 +32,14 @@
   .gradient-bg {
     background: linear-gradient(
       135deg,
-      rgba(42, 24, 84, 0.1) 0%,
+      rgba(99, 102, 241, 0.1) 0%,
       rgba(72, 101, 129, 0.1) 50%,
       rgba(234, 179, 8, 0.1) 100%
     );
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, #9466ff 0%, #486581 50%, #eab308 100%);
+    background: linear-gradient(135deg, #6366f1 0%, #486581 50%, #eab308 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -61,40 +61,5 @@
   
   .parallax-element {
     will-change: transform;
-  }
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-gray-100;
-}
-
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-track {
-    @apply bg-navy-800;
-  }
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-twilight-400 rounded-full;
-}
-
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-thumb {
-    @apply bg-twilight-600 rounded-full;
-  }
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-twilight-500;
-}
-
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-twilight-500;
   }
 }

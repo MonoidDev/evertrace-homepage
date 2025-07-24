@@ -50,7 +50,7 @@ const GlobalTrendsSection = () => {
   ]
 
   return (
-    <div className="relative py-20 md:py-24 bg-gradient-to-br from-twilight-50 to-white dark:from-twilight-900 dark:to-navy-900">
+    <div className="relative py-20 md:py-24 bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-900 dark:to-navy-900">
       <div className="container-max section-padding">
         <motion.div
           className="text-center mb-16"
@@ -83,10 +83,10 @@ const GlobalTrendsSection = () => {
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                 {trend.title}
               </h3>
-              <div className="text-2xl font-bold text-twilight-600 dark:text-twilight-400 mb-3">
+              <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-3">
                 {trend.stats}
               </div>
-              <p className="text-twilight-600 dark:text-twilight-400 mb-4 font-medium">
+              <p className="text-indigo-600 dark:text-indigo-400 mb-4 font-medium">
                 {trend.description}
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -118,7 +118,7 @@ const GlobalTrendsSection = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="text-3xl font-bold text-twilight-600 dark:text-twilight-400 mb-2">
+                <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
                   {point.percentage}
                 </div>
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
@@ -150,13 +150,13 @@ const GlobalTrendsSection = () => {
             and AI technology has finally reached the sophistication needed for emotional complexity.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="px-4 py-2 bg-twilight-100 dark:bg-twilight-800 rounded-full text-twilight-700 dark:text-twilight-300">
+            <span className="px-4 py-2 bg-indigo-100 dark:bg-indigo-800 rounded-full text-indigo-700 dark:text-indigo-300">
               #DigitalLegacy
             </span>
-            <span className="px-4 py-2 bg-twilight-100 dark:bg-twilight-800 rounded-full text-twilight-700 dark:text-twilight-300">
+            <span className="px-4 py-2 bg-indigo-100 dark:bg-indigo-800 rounded-full text-indigo-700 dark:text-indigo-300">
               #AIForGrief
             </span>
-            <span className="px-4 py-2 bg-twilight-100 dark:bg-twilight-800 rounded-full text-twilight-700 dark:text-twilight-300">
+            <span className="px-4 py-2 bg-indigo-100 dark:bg-indigo-800 rounded-full text-indigo-700 dark:text-indigo-300">
               #FutureOfMemorialization
             </span>
           </div>

@@ -1,82 +1,54 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
-import { gsap } from 'gsap'
+import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import Image from "next/image";
+import physicalAssets from "../assets/physical-assets.png";
+import digitalAssets from "../assets/digital-assets.png";
+import emotionalLegacy from "../assets/emotional-legacy.png";
+import communityBonds from "../assets/community-bonds.png";
 
 const ProblemSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const problemPoints = [
     {
-      stat: "150 million",
-      description: "people lose a loved one every year",
-      icon: "👥"
+      title: "「遺産」という概念が物質資産に偏りすぎている",
+      description:
+        "現在の相続制度は、不動産や預貯金などの物理的・金銭的資産のみを対象としており、現代のライフスタイルに対応できていません。さらに、手続きの複雑さや不透明さから、家族間の争いやトラブルの原因にもなっています。",
+      image: physicalAssets, // 書籍や金貨のイメージ
+      alt: "Physical assets like books and gold coins",
     },
     {
-      stat: "99%",
-      description: "of remembrance still relies on gravestones, urns, and photos",
-      icon: "🪦"
+      title: "デジタル資産の継承が制度的に未整備",
+      description:
+        "SNSアカウント、クラウドデータ、サブスクリプション、暗号資産など、私たちの日常の重要な一部となっているデジタル資産に対して、広く認知された継承方法が存在しません。",
+      image: digitalAssets, // デジタル資産のイメージ
+      alt: "Digital assets and cloud storage",
     },
     {
-      stat: "Physical memorials",
-      description: "decay, fade, and require maintenance",
-      icon: "⏳"
+      title: "「感情的な遺産」に関する保存手段が存在しない",
+      description:
+        "人との絆、想い出、価値観、人生の物語——そうした感情的・精神的なレガシーは、明確な保存や継承の仕組みがないため、数世代後には完全に失われてしまうのが現実です。",
+      image: emotionalLegacy, // 家族の写真や思い出のイメージ
+      alt: "Family photos and emotional memories",
     },
     {
-      stat: "One generation",
-      description: "Without structure, memories and wisdom vanish within one generation",
-      icon: "📚"
-    }
-  ]
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-
-    // Animate problem points sequentially on scroll
-    problemPoints.forEach((_, index) => {
-      gsap.fromTo(
-        `.problem-point-${index}`,
-        { opacity: 0, y: 50, scale: 0.8 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: `.problem-point-${index}`,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      )
-    })
-
-    // Final overlay animation
-    gsap.fromTo(
-      '.problem-overlay',
-      { opacity: 0, y: 30, scale: 0.95 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: '.problem-overlay',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    )
-
-  }, [])
+      title:
+        "家族以外とのつながり（ペット・友人・コミュニティなど）を反映できない",
+      description:
+        "従来の相続制度は、家族・血縁を前提としているため、現代的な「家族以外の絆」が取り残されやすい。",
+      image: communityBonds, // ペットや友人とのつながりのイメージ
+      alt: "Community bonds with pets and friends",
+    },
+  ];
 
   return (
-    <div ref={sectionRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white to-twilight-50 dark:from-navy-800 dark:to-navy-900">
+    <div
+      ref={sectionRef}
+      className="relative py-12 sm:py-16 md:py-48 bg-beige-600"
+    >
       <div className="container-max section-padding">
         {/* Section Title */}
         <motion.div
@@ -86,54 +58,46 @@ const ProblemSection = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-gradient mb-3 sm:mb-4 md:mb-6 px-4">
-            The Emotional Infrastructure Gap
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-olive-500 mb-4 sm:mb-6 md:mb-8 px-4">
+            現代の「遺産」は、もはや物質的な
+            <br />
+            ものだけではありません。
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-            While technology transformed every aspect of life, how we say goodbye remains unchanged
-          </p>
         </motion.div>
 
         {/* Problem Points Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 md:gap-12">
           {problemPoints.map((point, index) => (
             <motion.div
               key={index}
-              className={`problem-point-${index} glass rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 text-center hover:shadow-xl transition-all duration-300`}
-              whileHover={{ scale: 1.05, y: -5 }}
+              className={`problem-point-${index} glass rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 bg-white/50 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300`}
+              viewport={{ once: true }}
             >
-              <div className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 md:mb-5">{point.icon}</div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-twilight-600 dark:text-twilight-400 mb-2 sm:mb-3 md:mb-4">
-                {point.stat}
-              </div>
-              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              {/* Image placeholder - you can replace with actual images */}
+              <Image
+                src={point.image}
+                alt={point.alt}
+                className="w-full h-48 sm:h-56 md:h-64 bg-gradient-to-br from-indigo-200 to-purple-300 rounded-lg mb-4 sm:mb-6 flex items-center justify-center"
+              />
+
+              <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 md:mb-5 leading-tight">
+                {point.title}
+              </h4>
+
+              <p className="text-sm sm:text-base md:text-lg text-gray-900 leading-relaxed">
                 {point.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Final Overlay Message */}
-        <motion.div
-          className="problem-overlay text-center p-6 sm:p-8 md:p-10 glass rounded-2xl sm:rounded-3xl max-w-5xl mx-auto"
-          whileHover={{ scale: 1.02 }}
-        >
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-gradient mb-3 sm:mb-4 md:mb-5 px-2">
-            Technology transformed life—but forgot how we say goodbye.
-          </h3>
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed px-2">
-            The infrastructure for preserving human connection across generations doesn't exist. 
-            Until now.
-          </p>
-        </motion.div>
-
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-twilight-200/20 rounded-full blur-xl" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gold-200/20 rounded-full blur-xl" />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-indigo-200/20 rounded-full blur-xl" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-200/20 rounded-full blur-xl" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-navy-200/10 rounded-full blur-2xl -z-10" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProblemSection
+export default ProblemSection;

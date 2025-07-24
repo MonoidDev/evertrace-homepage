@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const DemoSection = () => (
-  <div className="py-20 bg-gradient-to-br from-twilight-50 to-navy-50 dark:from-twilight-900 dark:to-navy-900">
+  <div className="py-20 bg-gradient-to-br from-indigo-50 to-navy-50 dark:from-indigo-900 dark:to-navy-900">
     <div className="container-max section-padding text-center">
       <h2 className="text-4xl font-serif font-bold text-gradient mb-8">See Evertrace in Action</h2>
       <div className="max-w-4xl mx-auto glass rounded-3xl p-8">

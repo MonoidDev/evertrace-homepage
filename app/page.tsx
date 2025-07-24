@@ -38,7 +38,7 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-br from-twilight-50 via-white to-navy-50 dark:from-navy-900 dark:via-navy-800 dark:to-twilight-900">
+    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-white to-navy-50 dark:from-navy-900 dark:via-navy-800 dark:to-indigo-900">
       {/* Navigation */}
       <Navigation />
       

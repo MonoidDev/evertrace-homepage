@@ -17,7 +17,7 @@ An immersive, emotionally resonant homepage for Evertrace - a digital memorializ
 ## 🎨 Design Philosophy
 
 - **Calm, dignified, poetic** and human-centric design
-- **Calming color palette**: twilight purple, deep navy, translucent whites, soft golds
+- **Calming color palette**: indigo blue, deep navy, translucent whites, soft golds
 - **Narrative tone**: Storytelling over selling
 - **Full-screen sections** with immersive transitions
 - **Sacred digital space** feeling - not a typical SaaS product
@@ -64,7 +64,7 @@ An immersive, emotionally resonant homepage for Evertrace - a digital memorializ
 ## 🎭 Custom Design System
 
 ### Colors
-- **Twilight**: Primary brand colors (purple tones)
+- **Indigo**: Primary brand colors (blue-purple tones)
 - **Navy**: Supporting dark tones
 - **Gold**: Accent colors for warmth
 - Custom gradients and opacity variations
@@ -110,3 +110,4 @@ For inquiries: **ymao@monoidtech.com**
 *"We digitize everything—except how we say goodbye."*
 
 **Evertrace** - Reimagining how humanity remembers.
+![alt text](image.png)

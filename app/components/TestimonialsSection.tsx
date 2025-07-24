@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
             >
               <p className="text-gray-300 mb-6 italic">"{testimonial.quote}"</p>
               <div>
-                <p className="font-semibold text-twilight-400">{testimonial.author}</p>
+                <p className="font-semibold text-indigo-400">{testimonial.author}</p>
                 <p className="text-sm text-gray-400">{testimonial.role}</p>
               </div>
             </motion.div>

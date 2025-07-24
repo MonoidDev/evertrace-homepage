@@ -26,7 +26,7 @@ const VisionSection = () => {
   ]
 
   return (
-    <div className="relative py-24 md:py-32 bg-gradient-to-br from-twilight-50 to-white dark:from-navy-900 dark:to-navy-800">
+    <div className="relative py-24 md:py-32 bg-gradient-to-br from-indigo-50 to-white dark:from-navy-900 dark:to-navy-800">
       <div className="container-max section-padding">
         {/* Section Header */}
         <motion.div
@@ -39,7 +39,7 @@ const VisionSection = () => {
           <h2 className="text-4xl md:text-6xl font-serif font-bold text-gradient mb-6">
             A Bridge Between Our Digital Lives
             <br />
-            <span className="text-twilight-600 dark:text-twilight-400">
+            <span className="text-indigo-600 dark:text-indigo-400">
               and How We Remember
             </span>
           </h2>
@@ -67,14 +67,14 @@ const VisionSection = () => {
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-xl text-twilight-600 dark:text-twilight-400 font-medium">
+                <p className="text-xl text-indigo-600 dark:text-indigo-400 font-medium">
                   {item.description}
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   {item.details}
                 </p>
                 <motion.button
-                  className="px-6 py-3 border border-twilight-500 text-twilight-600 dark:text-twilight-400 rounded-full hover:bg-twilight-50 dark:hover:bg-twilight-900/20 transition-all"
+                  className="px-6 py-3 border border-indigo-500 text-indigo-600 dark:text-indigo-400 rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -93,7 +93,7 @@ const VisionSection = () => {
                     {[...Array(12)].map((_, i) => (
                       <motion.div
                         key={i}
-                        className="absolute w-3 h-3 bg-gradient-to-br from-twilight-300 to-gold-300 rounded-sm opacity-60"
+                        className="absolute w-3 h-3 bg-gradient-to-br from-indigo-300 to-gold-300 rounded-sm opacity-60"
                         style={{
                           left: `${Math.random() * 100}%`,
                           top: `${Math.random() * 100}%`,
@@ -123,7 +123,7 @@ const VisionSection = () => {
 
                   {/* Ripple Effect */}
                   <motion.div
-                    className="absolute inset-0 border-2 border-twilight-300/30 rounded-3xl"
+                    className="absolute inset-0 border-2 border-indigo-300/30 rounded-3xl"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   />
@@ -134,7 +134,7 @@ const VisionSection = () => {
         </div>
 
         {/* Connecting Lines */}
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-full bg-gradient-to-b from-twilight-200 via-twilight-400 to-gold-200 opacity-20 hidden lg:block" />
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-full bg-gradient-to-b from-indigo-200 via-indigo-400 to-gold-200 opacity-20 hidden lg:block" />
       </div>
     </div>
   )

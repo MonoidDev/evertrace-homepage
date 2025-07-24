@@ -20,7 +20,7 @@ const TeamSection = () => {
   ]
 
   return (
-    <div className="py-20 bg-gradient-to-br from-twilight-50 to-navy-50 dark:from-twilight-900 dark:to-navy-900">
+    <div className="py-20 bg-gradient-to-br from-indigo-50 to-navy-50 dark:from-indigo-900 dark:to-navy-900">
       <div className="container-max section-padding">
         <motion.div
           className="text-center mb-16"
@@ -52,7 +52,7 @@ const TeamSection = () => {
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
                 {member.name}
               </h3>
-              <p className="text-twilight-600 dark:text-twilight-400 mb-4 font-medium">
+              <p className="text-indigo-600 dark:text-indigo-400 mb-4 font-medium">
                 {member.role}
               </p>
               <div className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
