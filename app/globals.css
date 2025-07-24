@@ -1,7 +1,7 @@
+@config "../tailwind.config.js";
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @layer base {
   html {
@@ -9,8 +9,14 @@
   }
   
   body {
-    @apply font-sans text-gray-900 dark:text-gray-100 bg-white dark:bg-navy-900;
+    @apply font-sans text-gray-900 bg-white;
     overflow-x: hidden;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply text-gray-100;
+    }
   }
 }
 
@@ -26,7 +32,7 @@
   .gradient-bg {
     background: linear-gradient(
       135deg,
-      rgba(148, 102, 255, 0.1) 0%,
+      rgba(42, 24, 84, 0.1) 0%,
       rgba(72, 101, 129, 0.1) 50%,
       rgba(234, 179, 8, 0.1) 100%
     );
@@ -40,7 +46,13 @@
   }
   
   .glass {
-    @apply bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-white/10;
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .glass {
+      @apply bg-black/10 border-white/10;
+    }
   }
   
   .floating-element {
@@ -58,13 +70,31 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-navy-800;
+  @apply bg-gray-100;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-800;
+  }
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-twilight-400 dark:bg-twilight-600 rounded-full;
+  @apply bg-twilight-400 rounded-full;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    @apply bg-twilight-600 rounded-full;
+  }
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-twilight-500 dark:bg-twilight-500;
+  @apply bg-twilight-500;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-twilight-500;
+  }
 }
