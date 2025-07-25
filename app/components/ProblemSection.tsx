@@ -77,7 +77,7 @@ const ProblemSection = () => {
               <Image
                 src={point.image}
                 alt={point.alt}
-                className="w-full h-48 sm:h-56 md:h-64 bg-gradient-to-br from-indigo-200 to-purple-300 rounded-lg mb-4 sm:mb-6 flex items-center justify-center"
+                className="w-full h-48 sm:h-56 md:h-64 bg-gradient-to-br from-indigo-200 to-purple-300 rounded-lg mb-4 sm:mb-6 flex items-center justify-center object-cover"
               />
 
               <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 md:mb-5 leading-tight">
