@@ -56,10 +56,12 @@ export default function HomePage() {
         <section id="vision" className="relative">
           <VisionSection />
         </section>
+
+        {/* Footer */}
+        <section id="contact" className="relative">
+          <Footer />
+        </section>
       </main>
-      
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

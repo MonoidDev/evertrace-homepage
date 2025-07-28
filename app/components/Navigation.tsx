@@ -19,9 +19,8 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Why Evertrace', href: '#problem' },
-    { name: 'Demo', href: '#demo' },
-    { name: 'Vision', href: '#vision-poetry' },
-    { name: 'Team', href: '#team' },
+    { name: 'Solution', href: '#solution' },
+    { name: 'Vision', href: '#vision' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -78,24 +77,6 @@ const Navigation = () => {
 
           {/* Right Side */}
           <div className="flex items-center space-x-4">
-            {/* Dark Mode Toggle */}
-            <motion.button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg glass hover:bg-white/20 dark:hover:bg-black/20 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {isDarkMode ? (
-                <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-              )}
-            </motion.button>
-
             {/* CTA Button */}
             <motion.a
               href="#demo"
