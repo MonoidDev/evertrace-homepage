@@ -4,7 +4,7 @@ import digitalMemoriesIllustration from "../assets/digital-memories-illustration
 
 export const VisionSection = () => {
   return (
-    <section className="bg-beige-500 py-32 px-4 md:px-8 lg:px-16 relative min-h-screen">
+    <section className="bg-beige-500 py-32 px-4 md:px-8 lg:px-16 relative">
       <div className="max-w-7xl mx-auto">
         {/* Main Title */}
         <div className="text-center mb-16">
