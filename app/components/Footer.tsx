@@ -6,7 +6,7 @@ export default function Footer() {
           © 2025 Evertrace, G.K. Monoid. All rights reserved.
         </p>
         <a 
-          href="mailto:yma@monoidtech.com" 
+          href="mailto:ymao@monoidtech.com" 
           className="text-white hover:text-gold-400 transition-colors underline"
         >
           ymao@monoidtech.com
