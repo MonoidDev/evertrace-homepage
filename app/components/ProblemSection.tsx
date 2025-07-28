@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { gsap } from "gsap";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import physicalAssets from "../assets/physical-assets.png";
 import digitalAssets from "../assets/digital-assets.png";
 import emotionalLegacy from "../assets/emotional-legacy.png";
@@ -11,27 +11,28 @@ import communityBonds from "../assets/community-bonds.png";
 
 const ProblemSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const locale = useLocale();
 
-  const problemPoints = [
+  const problemPointsJP = [
     {
       title: "「遺産」という概念が物質資産に偏りすぎている",
       description:
         "現在の相続制度は、不動産や預貯金などの物理的・金銭的資産のみを対象としており、現代のライフスタイルに対応できていません。さらに、手続きの複雑さや不透明さから、家族間の争いやトラブルの原因にもなっています。",
-      image: physicalAssets, // 書籍や金貨のイメージ
+      image: physicalAssets,
       alt: "Physical assets like books and gold coins",
     },
     {
       title: "デジタル資産の継承が制度的に未整備",
       description:
         "SNSアカウント、クラウドデータ、サブスクリプション、暗号資産など、私たちの日常の重要な一部となっているデジタル資産に対して、広く認知された継承方法が存在しません。",
-      image: digitalAssets, // デジタル資産のイメージ
+      image: digitalAssets,
       alt: "Digital assets and cloud storage",
     },
     {
       title: "「感情的な遺産」に関する保存手段が存在しない",
       description:
         "人との絆、想い出、価値観、人生の物語——そうした感情的・精神的なレガシーは、明確な保存や継承の仕組みがないため、数世代後には完全に失われてしまうのが現実です。",
-      image: emotionalLegacy, // 家族の写真や思い出のイメージ
+      image: emotionalLegacy,
       alt: "Family photos and emotional memories",
     },
     {
@@ -39,10 +40,56 @@ const ProblemSection = () => {
         "家族以外とのつながり（ペット・友人・コミュニティなど）を反映できない",
       description:
         "従来の相続制度は、家族・血縁を前提としているため、現代的な「家族以外の絆」が取り残されやすい。",
-      image: communityBonds, // ペットや友人とのつながりのイメージ
+      image: communityBonds,
       alt: "Community bonds with pets and friends",
     },
   ];
+
+  const problemPointsEN = [
+    {
+      title: "Inheritance Focused Only on Assets",
+      description:
+        "Conventional inheritance systems are limited to physical and financial assets like real estate and savings, failing to reflect modern lifestyles. The complexity and lack of transparency often lead to family conflicts and disputes.",
+      image: physicalAssets,
+      alt: "Physical assets like books and gold coins",
+    },
+    {
+      title: "No Framework for Digital Assets",
+      description:
+        "There are still no well-established systems for passing on digital assets—such as social media accounts, cloud data, subscriptions, or crypto—which now form an essential part of daily life.",
+      image: digitalAssets,
+      alt: "Digital assets and cloud storage",
+    },
+    {
+      title: "Emotional Legacies Are Lost",
+      description:
+        "Memories, values, life stories, and emotional bonds have no formal way of being preserved or passed on. As a result, these intangible legacies often disappear after just a few generations.",
+      image: emotionalLegacy,
+      alt: "Family photos and emotional memories",
+    },
+    {
+      title: "Non-Family Bonds Are Overlooked",
+      description:
+        "Traditional inheritance systems are built around family and blood ties, making it difficult to account for meaningful relationships outside the family—such as pets, friends, and communities.",
+      image: communityBonds,
+      alt: "Community bonds with pets and friends",
+    },
+  ];
+
+  const problemPoints = locale === "ja-JP" ? problemPointsJP : problemPointsEN;
+
+  const sectionTitle =
+    locale === "ja-JP" ? (
+      <>
+        現代の「遺産」は、もはや物質的な
+        <br />
+        ものだけではありません。
+      </>
+    ) : (
+      <>
+        Modern “inheritance” is no longer <br /> just about material things.
+      </>
+    );
 
   return (
     <div
@@ -59,9 +106,7 @@ const ProblemSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-olive-500 mb-4 sm:mb-6 md:mb-8 px-4">
-            現代の「遺産」は、もはや物質的な
-            <br />
-            ものだけではありません。
+            {sectionTitle}
           </h2>
         </motion.div>
 

@@ -5,10 +5,13 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import Image from "next/image";
 import sekitourou from "../assets/sekitourou.png";
+import { useTranslations } from "next-intl";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
+
+  const t = useTranslations();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -90,24 +93,24 @@ const HeroSection = () => {
               transition={{ duration: 1, delay: 0.4 }}
             >
               <span className="text-2xl md:text-4xl lg:text-5xl">
-                人生を紡ぐデジタル
+                {t('hero.title')}
               </span>
               <br />
               <span className="text-4xl md:text-6xl lg:text-7xl">
-                終活インフラ
+                {t('hero.subtitle')}
               </span>
             </motion.h2>
 
             {/* Subheadline */}
             <motion.p
-              className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-gray-300 mb-8 max-w-4xl leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              私たちの「資産」「アカウント」「想い」を
+              {t('hero.introLine1')}
               <br />
-              永遠に紡ぐための新しい終活の形
+              {t('hero.introLine2')}
             </motion.p>
           </motion.div>
         </motion.div>

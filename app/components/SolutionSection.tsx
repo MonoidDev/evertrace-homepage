@@ -8,8 +8,13 @@ import heroIllustration from "../assets/hero-illustration.png";
 import lockIcon from "../assets/lock-icon.svg";
 import lightbulbIcon from "../assets/lightbulb-icon.svg";
 import toolsIcon from "../assets/tools-icon.svg";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 const SolutionSection = () => {
+  const t = useTranslations();
+  const locale = useLocale();
+
   return (
     <>
       {/* Hero Section */}
@@ -35,12 +40,17 @@ const SolutionSection = () => {
 
             <div className="space-y-6 pl-8">
               <motion.h2
-                className="text-4xl lg:text-5xl font-bold text-olive-500 mb-8"
+                className={
+                  "text-4xl lg:text-5xl font-bold text-olive-500 mb-8 " +
+                  (locale === "en-US" ? "font-serif" : "")
+                }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="font-serif">Evertrace</span> の解決策
+                {t.rich("solution.title", {
+                  b: (chunks) => <span className="font-serif">{chunks}</span>,
+                })}
               </motion.h2>
               <motion.div
                 className="space-y-4 text-[#1f281b] leading-[1.5] text-xl font-medium tracking-wide"
@@ -48,15 +58,36 @@ const SolutionSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <p>私たちは、</p>
-                <p>「別れ」と「継承」をテクノロジーで支えるための</p>
-                <p>次世代デジタルインフラを構築しています。</p>
-                <p>資産・感情・儀式という3つのレイヤーを、</p>
-                <p>
-                  ひとつのモジュール型エコシステムとして統合的に提供することで、
-                </p>
-                <p>誰もが自然に、そして安心して「人生の締めくくり」</p>
-                <p>と向き合える環境をつくります。</p>
+                {locale === "ja-JP" ? (
+                  <>
+                    <p>私たちは、</p>
+                    <p>「別れ」と「継承」をテクノロジーで支えるための</p>
+                    <p>次世代デジタルインフラを構築しています。</p>
+                    <p>資産・感情・儀式という3つのレイヤーを、</p>
+                    <p>
+                      ひとつのモジュール型エコシステムとして統合的に提供することで、
+                    </p>
+                    <p>誰もが自然に、そして安心して「人生の締めくくり」</p>
+                    <p>と向き合える環境をつくります。</p>
+                  </>
+                ) : (
+                  <>
+                    <p>We are</p>
+                    <p>building next-generation digital infrastructure</p>
+                    <p>
+                      to support <b>farewell</b> and <b>inheritance</b> with
+                      technology.
+                    </p>
+                    <p>
+                      By integrating three layers: assets, emotions, and rituals
+                    </p>
+                    <p>as a unified modular ecosystem,</p>
+                    <p>we create an environment where everyone can naturally</p>
+                    <p>
+                      and confidently face <b>life's conclusion</b>.
+                    </p>
+                  </>
+                )}
               </motion.div>
             </div>
           </div>
@@ -92,12 +123,12 @@ const SolutionSection = () => {
                     Legacy Organizer
                   </h3>
                   <p className="text-lg text-[#686868] leading-normal tracking-tight mb-4">
-                    物理的・金融的資産 + デジタル資産の
-                    <br />
-                    統合管理プラットフォーム
+                    {t.rich("solution.legacyOrganizer.subtitle", {
+                      br: () => <br />,
+                    })}
                   </p>
                   <p className="text-base text-black leading-[1.5] tracking-wide">
-                    相続の手続きを見える化し、トラブルを未然に防ぐための相続ガイド付き資産管理ツールです。銀行口座や保険、暗号資産、SNSアカウントまで、あらゆる資産を一元的に登録・分類・保管可能。家族や信頼できる第三者への継承設定も簡単に行え、セキュアなデジタル金庫として機能します。
+                    {t("solution.legacyOrganizer.content")}
                   </p>
                 </div>
 
@@ -127,10 +158,10 @@ const SolutionSection = () => {
                     AI Life Story Platform
                   </h3>
                   <p className="text-lg text-[#686868] leading-normal tracking-tight mb-4">
-                    感情的・精神的なレガシーの保存と伝承
+                    {t("solution.aiLifeStoryPlatform.subtitle")}
                   </p>
                   <p className="text-base text-black leading-[1.5] tracking-wide">
-                    人生の想い出や価値観、大切にしてきた言葉を、AIの力で記録・構造化・再現するライフストーリープラットフォーム。写真や動画、音声、エッセイなど多様な形式で、自分の人生を綴ることができ、未来の家族や大切な人へ、"声"と"想い"を残すことが可能になります。
+                    {t("solution.aiLifeStoryPlatform.content")}
                   </p>
                 </div>
 
@@ -157,18 +188,17 @@ const SolutionSection = () => {
                 </div>
                 <div className="space-y-3 flex-1">
                   <h3 className="text-2xl font-bold text-black tracking-tight">
-                    拡張レガシーツール
+                    {t("solution.legacyToolkit.title")}
                   </h3>
                   <p className="text-lg text-[#686868] leading-normal tracking-tight mb-4">
-                    オンラインで簡潔かつ安心して操作できる
-                    <br />
-                    UI/UXで提供します。
+                    {t.rich("solution.legacyToolkit.subtitle", {
+                      br: () => <br />,
+                    })}
                   </p>
                   <div className="text-base text-black leading-[1.5] tracking-wide space-y-1">
-                    <p>•葬儀の事前手配・希望の可視化</p>
-                    <p>•事前指示書の作成（医療・介護・延命など）</p>
-                    <p>•オンライン遺言の準備と共有</p>
-                    <p>•ペット追悼メモリアルページの作成</p>
+                    {t.rich("solution.legacyToolkit.content", {
+                      p: (chunks) => <p>•{chunks}</p>,
+                    })}
                   </div>
                 </div>
               </motion.div>

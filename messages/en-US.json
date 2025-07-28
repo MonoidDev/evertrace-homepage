@@ -1,0 +1,56 @@
+{
+  "navigation": {
+    "home": "Home",
+    "problem": "Why Evertrace",
+    "solution": "Solution",
+    "vision": "Vision",
+    "contact": "Contact",
+    "seeDemo": "See Demo"
+  },
+  "hero": {
+    "title": "The Missing Digital Layer",
+    "subtitle": "In How We Grieve",
+    "introLine1": "Building the bridge between our digital lives and",
+    "introLine2": "how we remember those we've lost."
+  },
+  "solution": {
+    "title": "The Evertrace Solution",
+    "legacyOrganizer": {
+      "subtitle": "Integrated management<br></br>for physical, financial, and digital assets",
+      "content": "A smart asset management tool with an inheritance guide designed to make the inheritance process clear and prevent future conflicts. You can easily register, organize, and store everything from bank accounts and insurance policies to crypto assets and social media accounts—all in one place. It also makes it simple to designate family members or trusted individuals as successors, while functioning as a secure digital safe."
+    },
+    "aiLifeStoryPlatform": {
+      "subtitle": "Curating emotional and spiritual legacies",
+      "content": "An AI-powered life story platform designed to preserve and reconstruct your most treasured memories, values, and meaningful words. Through photos, videos, audio, and written reflections, you can weave the story of your life—and leave behind your voice and your essence for those who matter most."
+    },
+    "legacyToolkit": {
+      "title": "Extensive Legacy Toolkit",
+      "subtitle": "Streamlined and secure via intuitive online UI/UX",
+      "content": "<p>Pre-arrangement and visualization of funeral wishes</p><p>Creation of advance directives (medical care, nursing, life-prolonging treatment, etc.)</p><p>Preparation and sharing of online wills</p><p>Creation of pet memorial tribute pages</p>"
+    }
+  },
+  "vision": {
+    "title": "The Evertrace Vision",
+    "content": "<p>We deliver your</p><p>irreplaceable essence</p><p>to the future.</p><br></br><p>Not just to leave something behind,</p><p>but to remain as an</p><p>unforgettable presence.</p>",
+    "emotionalOS": {
+      "title": "Emotional OS",
+      "content": "We are creating a platform designed to preserve and share emotional legacies—memories, values, and meaningful experiences—for generations to come."
+    },
+    "combiningEmotionsAndTechnology": {
+      "title": "Combining Emotions and Technology",
+      "content": "We combine highly secure financial, legal, and AI technologies with intuitive UX design to provide warm and trustworthy digital services that anyone can use with confidence."
+    },
+    "legacyEcosystem": {
+      "title": "Comprehensive Legacy<br></br>Ecosystem",
+      "content": "From spiritual thoughts to material assets, from bonds with pets to connections with people<br></br><br></br>——We aim to create a comprehensive legacy infrastructure that connects all 'precious things' to the future."
+    },
+    "japanToWorld": {
+      "title": "From Japan to the World",
+      "content": "Starting from Japan's unique end-of-life culture, “Shukatsu“ (終活), we are redefining the global concept of legacy."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Evertrace, G.K. Monoid. All rights reserved.",
+    "email": "ymao@monoidtech.com"
+  }
+}

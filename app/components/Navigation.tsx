@@ -1,42 +1,38 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const t = useTranslations();
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Why Evertrace', href: '#problem' },
-    { name: 'Solution', href: '#solution' },
-    { name: 'Vision', href: '#vision' },
-    { name: 'Contact', href: '#contact' },
-  ]
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
-    document.documentElement.classList.toggle('dark')
-  }
+    { name: t("navigation.home"), href: "#home" },
+    { name: t("navigation.problem"), href: "#problem" },
+    { name: t("navigation.solution"), href: "#solution" },
+    { name: t("navigation.vision"), href: "#vision" },
+    { name: t("navigation.contact"), href: "#contact" },
+  ];
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'glass shadow-lg py-2'
-          : 'bg-transparent py-4'
+        isScrolled ? "glass shadow-lg py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container-max section-padding">
@@ -66,7 +62,7 @@ const Navigation = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-olive-300 transition-colors font-medium"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 0 }}
               >
@@ -77,6 +73,9 @@ const Navigation = () => {
 
           {/* Right Side */}
           <div className="flex items-center space-x-4">
+            {/* Language Switcher */}
+            <LanguageSwitcher isScrolled={isScrolled} />
+
             {/* CTA Button */}
             <motion.a
               href="#demo"
@@ -84,7 +83,7 @@ const Navigation = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              See Demo
+              {t("navigation.seeDemo")}
             </motion.a>
 
             {/* Mobile Menu Button */}
@@ -94,14 +93,19 @@ const Navigation = () => {
               whileTap={{ scale: 0.95 }}
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <path
+                  d="M3 12h18M3 6h18M3 18h18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
               </svg>
             </motion.button>
           </div>
         </div>
       </div>
     </motion.nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
